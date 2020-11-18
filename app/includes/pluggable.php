@@ -230,7 +230,7 @@ if ( ! function_exists('k2_comment_type_switch') ) :
 	function k2_comment_type_switch( $comment, $args, $depth = 1 ) {
 		$GLOBALS['comment'] = $comment;
 		switch( $comment->comment_type ) :
-			case '' :
+			case 'comment' :
 		?>
 		<li id="comment-<?php comment_ID(); ?>">
 			<div <?php comment_class(); ?>>
