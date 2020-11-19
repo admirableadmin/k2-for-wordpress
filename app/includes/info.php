@@ -151,7 +151,7 @@ function k2_get_rolling_archives_dates($query) {
 	$post_dates = $wpdb->get_results("SELECT {$wpdb->posts}.post_date_gmt FROM {$matches[1]}");
 
 	$page_dates = array();
-	setlocale(LC_TIME, WPLANG . '.' . get_option('blog_charset') );
+	setlocale(LC_TIME, get_locale() . '.' . get_option('blog_charset') );
 
 	for ($i = 0; $i < $num_pages; $i++) {
 		$page_dates[] = strftime('%B, %Y', abs(strtotime($post_dates[$i * $per_page]->post_date_gmt . ' GMT')) );
