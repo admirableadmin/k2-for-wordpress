@@ -145,7 +145,7 @@ function k2_get_rolling_archives_dates($query) {
 	$per_page = intval(get_query_var('posts_per_page'));
 	$num_pages = $query->max_num_pages;
 
-	$search = '/FROM\s+?(.*)\s+?LIMIT/siU';
+	$search = '/FROM\s+?(.*)\s+?WHERE/siU';
 	preg_match($search, $query->request, $matches);
 
 	$post_dates = $wpdb->get_results("SELECT {$wpdb->posts}.post_date_gmt FROM {$matches[1]}");
